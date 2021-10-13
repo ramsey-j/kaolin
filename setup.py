@@ -154,6 +154,7 @@ def get_extensions():
     if torch.cuda.is_available() or os.getenv('FORCE_CUDA', '0') == '1':
         with_cuda = True
         define_macros += [("WITH_CUDA", None)]
+        define_macros += [("THRUST_IGNORE_CUB_VERSION_CHECK", None)]
         sources += glob.glob('kaolin/csrc/**/*.cu', recursive=True)
         extension = CUDAExtension
         extra_compile_args.update({'nvcc': ['-O3']})
