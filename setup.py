@@ -59,7 +59,7 @@ else:
         missing_modules.append(f'cython=={CYTHON_MIN_VER}')
 
 
-dist.Distribution().fetch_build_eggs(missing_modules)
+#dist.Distribution().fetch_build_eggs(missing_modules)
 
 import os
 import sys
@@ -125,6 +125,7 @@ def get_requirements():
             requirements.append('torch')
         else:
             requirements.append(f'torch>={TORCH_MIN_VER},<={TORCH_MAX_VER}')
+    requirements.append('numpy')
     requirements.append('scipy>=1.2.0,<=1.7.1')
     requirements.append('Pillow>=8.0.0')
     requirements.append('tqdm>=4.51.0')
