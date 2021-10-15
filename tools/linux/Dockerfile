@@ -19,6 +19,8 @@ RUN sed -i -e 's|^deb http://[^.]*[.]ubuntu[.]com/ubuntu|deb  https://urm.nvidia
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get install -y which
+
 ARG PYTHON_VERSION=3.7
 ENV PYTHON_VERSION=${PYTHON_VERSION}
 RUN curl -o ~/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
