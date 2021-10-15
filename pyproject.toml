@@ -4,4 +4,5 @@ requires = [
     'setuptools >= 43.0.0',
     'numpy',
     'torch',
+    'Cython',
 ]
